@@ -1,10 +1,9 @@
 html,
 body {
-    height: 97%;
-    width: 97%;
-    margin: 1%;
+    height: 98%;
+    width: 98%;
+    margin: 0.5%;
 }
-
 
 .header-row,
 .content-row {
@@ -20,6 +19,7 @@ body {
     flex-grow: 10;
     display: flex;
     flex-direction: column;
+    min-width: 600px;
 }
 
 #controls-column {
@@ -27,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 30%;
+    min-width: 300px;
 }
 
 #txt-points {
