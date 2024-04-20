@@ -23,8 +23,8 @@ function cb_example() {
             duration.value = 40;
             break;
         case "Pulse-width modulation":
-            txt_points.value = "10, 40, 10\n0, 40, 35";
-            duration.value = 100;
+            txt_points.value = "20, 80, 10\n0, 80, 40";
+            duration.value = 200;
             break;
         case "Temporal summation":
             txt_points.value = "5, 0.3, 20\n10, 0.3, 20\n2, 0.3, 20\n14, 0.3, 20\n5, 0.3, 20";
