@@ -45,13 +45,18 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            max-width: 25%;
+            max-width: 30%;
         }
 
         #txt-points {
             flex-grow: 1;
             min-height: 150px;
             flex-direction: column;
+        }
+
+        .text-justify {
+            text-align: justify;
+            padding: 1em;
         }
     </style>
 </head>
@@ -66,6 +71,19 @@
                 <div id="div-plot" class="container" style="flex-grow: 1;">Loading please wait</div>
             </div>
             <div id="controls-column" class="col-auto">
+                <div class="row text-justify">
+                    <p>This simulation uses the Hodgkin-Huxley model to explore nerve communication. Adjust parameters
+                        to see their impact on action potentials. It includes preset scenarios for ease of use.
+                    </p>
+                    <p>The default Dormand-Prince solver balances accuracy with larger time steps. Alternatives like
+                        Runge-Kutta and Euler are available for faster, though less precise, results. Modify the time
+                        step and duration to alter simulation speed and length. Input currents are set by listing time,
+                        duration, and strength.
+                    </p>
+                    <p>Change parameters or select a scenario from the dropdown to update the plot automatically. Click
+                        "Update Plot" after adjustments to view changes.
+                    </p>
+                </div>
                 <div class="row form-group">
                     <label for="select-example" class="col-sm-4 col-form-label text-sm-right">Example Scenarios</label>
                     <div class="col-sm-8">
@@ -90,15 +108,15 @@
                     </div>
                 </div>
                 <div class="row form-group align-items-center">
-                    <label for="input-duration" class="col-sm-4 col-form-label text-sm-right">Duration (ms)</label>
-                    <div class="col-sm-8">
-                        <input id="input-duration" type="number" class="form-control" placeholder="Enter duration in ms"
-                            required>
-                    </div>
                     <label for="input-timestep" class="col-sm-4 col-form-label text-sm-right">Time step (ms)</label>
                     <div class="col-sm-8">
                         <input id="input-timestep" type="number" class="form-control"
                             placeholder="Enter time step in ms" required>
+                    </div>
+                    <label for="input-duration" class="col-sm-4 col-form-label text-sm-right">Duration (ms)</label>
+                    <div class="col-sm-8">
+                        <input id="input-duration" type="number" class="form-control" placeholder="Enter duration in ms"
+                            required>
                     </div>
                 </div>
                 <label for="txt-points" class="form-label">Input points (Time $t_0$, Duration $ms$, Strength
@@ -107,8 +125,19 @@
                 <div class="btn-group-vertical" role="group" aria-label="Plot Controls">
                     <button id="btn-update" class="btn btn-primary">Update Plot</button>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Project: <a href="https://shadymeowy.github.io/hodgkin-huxley-sim/" target="_blank">Project
+                                Page</a></p>
+                    </div>
+                    <div class="col">
+                        <p>Author: <a href="https://github.com/shadymeowy" target="_blank">Tolga Demirdal</a></p>
+                    </div>
+                </div>
             </div>
+
         </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
