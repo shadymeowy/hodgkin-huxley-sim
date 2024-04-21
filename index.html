@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <title>Hodgkin-Huxley Simulation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="applet.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid text-center">
+        <div class="header-row">
+            <h3>Hodgkin-Huxley Simulation</h3>
+        </div>
+        <div class="content-row">
+            <div id="plot-column" class="col">
+                <div id="div-plot" class="container" style="flex-grow: 1;">Loading please wait</div>
+            </div>
+            <div id="controls-column" class="col-auto">
+                <div class="row text-justify">
+                    <p>This simulation uses the Hodgkin-Huxley model to explore nerve communication. Adjust parameters
+                        to see their impact on action potentials. It includes preset scenarios for ease of use.
+                    </p>
+                    <p>The default Dormand-Prince solver balances accuracy with larger time steps. Alternatives like
+                        Runge-Kutta and Euler are available for faster, though less precise, results. Modify the time
+                        step and duration to alter simulation speed and length. Input currents are set by listing time,
+                        duration, and strength.
+                    </p>
+                    <p>Change parameters or select a scenario from the dropdown to update the plot automatically. Click
+                        "Update Plot" after adjustments to view changes.
+                    </p>
+                </div>
+                <div class="row form-group">
+                    <label for="select-example" class="col-sm-4 col-form-label text-sm-right">Example Scenarios</label>
+                    <div class="col-sm-8">
+                        <select id="select-example" class="form-control form-select">
+                            <option>Single action potential</option>
+                            <option>Multiple action potentials</option>
+                            <option>Refactory period</option>
+                            <option>Accommodation</option>
+                            <option>Pulse-width modulation</option>
+                            <option>Temporal summation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label for="select-solver" class="col-sm-4 col-form-label text-sm-right">Solver</label>
+                    <div class="col-sm-8">
+                        <select id="select-solver" class="form-control form-select">
+                            <option>Dormand-Prince</option>
+                            <option>Runge-Kutta</option>
+                            <option>Euler</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group align-items-center">
+                    <label for="input-timestep" class="col-sm-4 col-form-label text-sm-right">Time step (ms)</label>
+                    <div class="col-sm-8">
+                        <input id="input-timestep" type="number" class="form-control"
+                            placeholder="Enter time step in ms" required>
+                    </div>
+                    <label for="input-duration" class="col-sm-4 col-form-label text-sm-right">Duration (ms)</label>
+                    <div class="col-sm-8">
+                        <input id="input-duration" type="number" class="form-control" placeholder="Enter duration in ms"
+                            required>
+                    </div>
+                </div>
+                <label for="txt-points" class="form-label">Input points (Time $t_0$, Duration $ms$, Strength
+                    $\mu A$)</label>
+                <textarea id="txt-points" class="form-control" placeholder="Enter code here..." required></textarea>
+                <div class="btn-group-vertical" role="group" aria-label="Plot Controls">
+                    <button id="btn-update" class="btn btn-primary">Update Plot</button>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Project: <a href="https://github.com/shadymeowy/hodgkin-huxley-sim" target="_blank">Project
+                                Page</a></p>
+                    </div>
+                    <div class="col">
+                        <p>Author: <a href="https://github.com/shadymeowy" target="_blank">Tolga Demirdal</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+    <script src="https://cdn.plot.ly/plotly-2.31.1.min.js" charset="utf-8"></script>
+    <script src='pkg/hodgkin_huxley_sim.js'></script>
+    <script src="applet.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "hodgkin-huxley-sim",
+  "collaborators": [
+    "shadymeowy <tolgademirdal@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "hodgkin_huxley_sim_bg.wasm",
+    "hodgkin_huxley_sim.js",
+    "hodgkin_huxley_sim.d.ts"
+  ],
+  "browser": "hodgkin_huxley_sim.js",
+  "types": "hodgkin_huxley_sim.d.ts"
+}

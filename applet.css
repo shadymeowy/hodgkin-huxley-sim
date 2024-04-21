@@ -1,0 +1,42 @@
+html,
+body {
+    height: 98%;
+    width: 98%;
+    margin: 0.5%;
+}
+
+.header-row,
+.content-row {
+    width: 100%;
+}
+
+.content-row {
+    flex-grow: 1;
+    display: flex;
+}
+
+#plot-column {
+    flex-grow: 10;
+    display: flex;
+    flex-direction: column;
+    min-width: 600px;
+}
+
+#controls-column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    min-width: 300px;
+}
+
+#txt-points {
+    flex-grow: 1;
+    min-height: 150px;
+    flex-direction: column;
+}
+
+.text-justify {
+    text-align: justify;
+    padding: 1em;
+}
