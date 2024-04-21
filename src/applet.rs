@@ -20,14 +20,6 @@ macro_rules! console_log {
 
 #[derive(Debug, Clone)]
 #[wasm_bindgen]
-pub enum SolverType {
-    RK4,
-    Dopri,
-    Euler,
-}
-
-#[derive(Debug, Clone)]
-#[wasm_bindgen]
 pub struct APApplet {
     div_plot: web_sys::HtmlElement,
     text_area: web_sys::HtmlTextAreaElement,
@@ -66,11 +58,7 @@ impl APApplet {
         let mut i_l = Vec::<f64>::new();
         let mut i_total = Vec::<f64>::new();
 
-        let data = match self.solver {
-            SolverType::RK4 => hh_simulation_rk4(points, self.dt, self.duration),
-            SolverType::Dopri => hh_simulation_dopri(points, self.dt, self.duration),
-            SolverType::Euler => hh_simulation_euler(points, self.dt, self.duration),
-        };
+        let data = hh_simulation(points, self.dt, self.duration, self.solver);
 
         for d in data {
             t.push(d.t);
@@ -187,8 +175,13 @@ impl APApplet {
         self.dt = dt;
     }
 
-    pub fn set_solver(&mut self, solver: SolverType) {
-        self.solver = solver;
+    pub fn set_solver(&mut self, solver: &str) {
+        match solver {
+            "Runge-Kutta" => self.solver = SolverType::RK4,
+            "Dormand-Prince" => self.solver = SolverType::Dopri,
+            "Euler" => self.solver = SolverType::Euler,
+            _ => self.solver = SolverType::Dopri,
+        }
     }
 
     fn run_script(&self, script: &str) -> Result<(), JsValue> {
