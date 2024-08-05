@@ -14,7 +14,7 @@ default = ["console_error_panic_hook"]
 wasm-bindgen = "0.2.84"
 plotly = "0.9.0"
 getrandom = { version = "0.2", features = ["js"] }
-ndarray = "0.15.0"
+ndarray = "0.16.0"
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
