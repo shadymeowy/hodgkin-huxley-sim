@@ -1,0 +1,1 @@
+cargo:rustc-env=MIME_TYPES_GENERATED_PATH=/home/runner/work/hodgkin-huxley-sim/hodgkin-huxley-sim/target/release/build/mime_guess-f1f2ebeed7a290b3/out/mime_types_generated.rs
