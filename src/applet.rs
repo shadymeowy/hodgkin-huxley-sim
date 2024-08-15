@@ -135,27 +135,27 @@ impl APApplet {
                     .columns(1)
                     .pattern(GridPattern::Independent),
             )
-            .title(Title::new("Hodgkin-Huxley Model Simulation"))
+            .title(Title::with_text("Hodgkin-Huxley Model Simulation"))
             .x_axis(plotly::layout::Axis::new())
-            .x_axis3(plotly::layout::Axis::new().title(Title::new("$t$ ($ms$)")))
+            .x_axis3(plotly::layout::Axis::new().title(Title::with_text("$t$ ($ms$)")))
             .y_axis(
                 plotly::layout::Axis::new()
-                    .title(Title::new("Voltage ($mV$)"))
+                    .title(Title::with_text("Voltage ($mV$)"))
                     .side(plotly::common::AxisSide::Left),
             )
             .y_axis2(
                 plotly::layout::Axis::new()
-                    .title(Title::new("Conductance ($mS/cm^2$)"))
+                    .title(Title::with_text("Conductance ($mS/cm^2$)"))
                     .anchor("x2"),
             )
             .y_axis3(
                 plotly::layout::Axis::new()
-                    .title(Title::new("Current ($\\mu A$)"))
+                    .title(Title::with_text("Current ($\\mu A$)"))
                     .anchor("x3"),
             )
             .y_axis5(
                 plotly::layout::Axis::new()
-                    .title(Title::new("Current ($\\mu A$)"))
+                    .title(Title::with_text("Current ($\\mu A$)"))
                     .overlaying("y")
                     .side(plotly::common::AxisSide::Right)
                     .range(vec![-10.0, 40.0]),
